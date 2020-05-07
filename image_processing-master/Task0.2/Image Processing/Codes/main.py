@@ -5,10 +5,10 @@ import os
 def partA():
     import csv
    
-    img1=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\bird.jpg',1)    
-    img2=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\cat.jpg',1)
-    img3=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\flowers.jpg',1)
-    img4=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\horse.jpg',1)
+    img1=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\bird.jpg',1)    
+    img2=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\cat.jpg',1)
+    img3=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\flowers.jpg',1)
+    img4=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\horse.jpg',1)
     name1="bird.jpg"
     name2="cat.jpg"
     name3="flowers.jpg"
@@ -18,8 +18,8 @@ def partA():
     height3,width3,channel3=img3.shape
     height4,width4,channel4=img4.shape
 
-    M=int(input("enter teh value of M"))
-    N=int(input("enter teh value of N"))
+    M=int(input("enter the value of M"))
+    N=int(input("enter the value of N"))
     M=int(M/2)
     N=int(N/2)
     p11,p12,p13=img1[M,N]
@@ -27,7 +27,7 @@ def partA():
     p31,p32,p33=img3[M,N]
     p41,p42,p43=img4[M,N]
     
-    with open(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Generated\stats.csv','w',newline='') as f:
+    with open(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Generated\stats.csv','w',newline='') as f:
         
         tw=csv.writer(f)
         tw.writerow([name1,height1,width1,channel1,p11,p12,p13])
@@ -37,27 +37,27 @@ def partA():
     pass
 
 def partB():
-    img2=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\cat.jpg',1)
+    img2=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\cat.jpg',1)
     new=img2
     new[:,:,0]=0
     new[:,:,1]=0
     cv2.imwrite
-    path = r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Generated'
+    path = r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Generated'
     cv2.imwrite(os.path.join(path , 'cat_red.jpg'),new)
 
     pass
 
 def partC():
-    img3=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\flowers.jpg',1)
+    img3=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\flowers.jpg',1)
     new1 = cv2.cvtColor(img3, cv2.COLOR_BGR2BGRA)
-    new1[:,:,3]=0.5
-    path = r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Generated'
+    new1[:,:,3]=128
+    path = r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Generated'
     cv2.imwrite(os.path.join(path , 'flower_alpha.png'),new1)
     pass
 
 def partD():
-    path = r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Generated'
-    img4=cv2.imread(r'C:\Users\Hardik Arora\Desktop\Task0.2\Image Processing\Images\horse.jpg',1)
+    path = r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Generated'
+    img4=cv2.imread(r'C:\Users\Hardik Arora\Desktop\image_processing-master\Task0.2\Image Processing\Images\horse.jpg',1)
     rows,columns,ch=img4.shape
     for i in range(rows):
         for j in range(columns):
